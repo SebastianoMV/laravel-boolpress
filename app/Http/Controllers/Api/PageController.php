@@ -10,8 +10,8 @@ class PageController extends Controller
 {
     public function index()
     {
-        $posts = Post::with('tags')->get();
+        $posts = Post::with('tags')->paginate(5);
 
-        return response()->json(compact('posts'));
+        return response()->json($posts);
     }
 }

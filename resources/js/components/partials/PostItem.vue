@@ -1,6 +1,5 @@
 <template>
-<div class="container ">
-    <div class="card m-3 p-3" v-for="post in posts" :key="post.id">
+    <div class="card m-3 p-3" >
         <h3>{{post.title}}</h3>
         <p>{{post.content}}</p>
         <ul>
@@ -10,35 +9,15 @@
         </ul>
 
     </div>
-</div>
 
 </template>
 
 <script>
-import Axios from 'axios';
-
 export default {
-    name: "MainComp",
-
-    data(){
-      return{
-        posts:[],
-      }
-    },
-
-    methods: {
-        getApi(){
-            Axios.get('/api/posts')
-            .then(resp =>{
-                this.posts = resp.data.posts;
-                console.log(this.posts);
-            })
-        }
-    },
-
-    mounted() {
-        this.getApi()
-    },
+    name: 'PosItem',
+    props: {
+        post: Object,
+    }
 
 }
 </script>
@@ -71,6 +50,5 @@ export default {
     background-color: rgb(232, 229, 229);
 
 }
-
 
 </style>
