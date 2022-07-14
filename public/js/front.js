@@ -2019,7 +2019,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           current: resp.data.current_page,
           last: resp.data.last_page
         };
-        page = _this.pagination;
+        console.log(_this.pagination);
       });
     }
   },
@@ -2224,7 +2224,19 @@ var render = function render() {
         return _vm.getApi(_vm.pagination.current - 1);
       }
     }
-  }, [_vm._v("\n        <<\n    ")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("\n        <<\n    ")]), _vm._v(" "), _vm._l(_vm.pagination.last, function (n) {
+    return _c("button", {
+      key: n,
+      attrs: {
+        disabled: _vm.pagination.current == n
+      },
+      on: {
+        click: function click($event) {
+          return _vm.getApi(n);
+        }
+      }
+    }, [_vm._v("\n    " + _vm._s(n) + "\n    ")]);
+  }), _vm._v(" "), _c("button", {
     attrs: {
       disabled: _vm.pagination.current == _vm.pagination.last
     },
@@ -2233,7 +2245,7 @@ var render = function render() {
         return _vm.getApi(_vm.pagination.current + 1);
       }
     }
-  }, [_vm._v("\n        >>\n    ")])]);
+  }, [_vm._v("\n        >>\n    ")])], 2);
 };
 
 var staticRenderFns = [];

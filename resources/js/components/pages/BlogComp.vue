@@ -9,6 +9,12 @@
         <<
     </button>
 
+    <button v-for="n in pagination.last" :key="n"
+    @click="getApi(n)"
+    :disabled="pagination.current == n">
+    {{n}}
+    </button>
+
     <button
     @click="getApi(pagination.current +1)"
     :disabled="pagination.current == pagination.last">
@@ -47,7 +53,7 @@ export default {
                 this.pagination ={
                     current: resp.data.current_page,
                     last: resp.data.last_page}
-                page = this.pagination
+                console.log(this.pagination);
             });
         }
     },
