@@ -8,6 +8,7 @@ import 'animate.css';
 import router from './routes';
 
 
+
 const app = new Vue({
 
     el: '#app',

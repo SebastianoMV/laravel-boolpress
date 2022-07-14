@@ -3,29 +3,32 @@
     <div>
         <PostItem v-for="post in posts" :key="post.id" :post="post"/>
     </div>
-    <button
-    @click="getApi(pagination.current -1)"
-    :disabled="pagination.current == 1">
-        <<
-    </button>
+    <div class="p-3">
+        <button class="btn-page"
+        @click="getApi(pagination.current -1)"
+        :disabled="pagination.current == 1">
+            <i class="fa-solid fa-circle-arrow-left"></i>
+        </button>
 
-    <button v-for="n in pagination.last" :key="n"
-    @click="getApi(n)"
-    :disabled="pagination.current == n">
-    {{n}}
-    </button>
+        <button class="btn-page"
+        v-for="n in pagination.last" :key="n"
+        @click="getApi(n)"
+        :disabled="pagination.current == n">
+            {{n}}
+        </button>
 
-    <button
-    @click="getApi(pagination.current +1)"
-    :disabled="pagination.current == pagination.last">
-        >>
-    </button>
+        <button class="btn-page"
+        @click="getApi(pagination.current +1)"
+        :disabled="pagination.current == pagination.last">
+            <i class="fa-solid fa-circle-arrow-right"></i>
+        </button>
+    </div>
+
 </div>
 
 </template>
 
 <script>
-import Axios from 'axios';
 import PostItem from '../partials/PostItem.vue';
 
 export default {
@@ -47,7 +50,7 @@ export default {
     },
     methods: {
         getApi(page) {
-            Axios.get(this.apiUrl + "?page=" + page)
+            axios.get(this.apiUrl + "?page=" + page)
                 .then(resp => {
                 this.posts = resp.data.data;
                 this.pagination ={
@@ -67,6 +70,12 @@ export default {
 <style lang="scss" scoped>
 .animate__fadeIn{
     animation-duration: 3s;
+}
+.btn-page{
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+
 }
 
 

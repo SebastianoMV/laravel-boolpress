@@ -26,6 +26,7 @@ import HeaderComp from './components/partials/HeaderComp.vue';
 import FooterComp from './components/partials/FooterComp.vue';
 import BlogComp from './components/pages/BlogComp.vue';
 
+
 export default {
     name: 'App',
     components:{

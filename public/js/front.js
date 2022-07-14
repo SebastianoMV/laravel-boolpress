@@ -1987,17 +1987,14 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _partials_PostItem_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../partials/PostItem.vue */ "./resources/js/components/partials/PostItem.vue");
+/* harmony import */ var _partials_PostItem_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../partials/PostItem.vue */ "./resources/js/components/partials/PostItem.vue");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 /* harmony default export */ __webpack_exports__["default"] = (_defineProperty({
   name: "BlogComp",
   components: {
-    PostItem: _partials_PostItem_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    PostItem: _partials_PostItem_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   data: function data() {
     return {
@@ -2013,7 +2010,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     getApi: function getApi(page) {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(this.apiUrl + "?page=" + page).then(function (resp) {
+      axios.get(this.apiUrl + "?page=" + page).then(function (resp) {
         _this.posts = resp.data.data;
         _this.pagination = {
           current: resp.data.current_page,
@@ -2027,7 +2024,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     this.getApi(1);
   }
 }, "components", {
-  PostItem: _partials_PostItem_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  PostItem: _partials_PostItem_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
 }));
 
 /***/ }),
@@ -2215,7 +2212,10 @@ var render = function render() {
         post: post
       }
     });
-  }), 1), _vm._v(" "), _c("button", {
+  }), 1), _vm._v(" "), _c("div", {
+    staticClass: "p-3"
+  }, [_c("button", {
+    staticClass: "btn-page",
     attrs: {
       disabled: _vm.pagination.current == 1
     },
@@ -2224,9 +2224,12 @@ var render = function render() {
         return _vm.getApi(_vm.pagination.current - 1);
       }
     }
-  }, [_vm._v("\n        <<\n    ")]), _vm._v(" "), _vm._l(_vm.pagination.last, function (n) {
+  }, [_c("i", {
+    staticClass: "fa-solid fa-circle-arrow-left"
+  })]), _vm._v(" "), _vm._l(_vm.pagination.last, function (n) {
     return _c("button", {
       key: n,
+      staticClass: "btn-page",
       attrs: {
         disabled: _vm.pagination.current == n
       },
@@ -2235,8 +2238,9 @@ var render = function render() {
           return _vm.getApi(n);
         }
       }
-    }, [_vm._v("\n    " + _vm._s(n) + "\n    ")]);
+    }, [_vm._v("\n            " + _vm._s(n) + "\n        ")]);
   }), _vm._v(" "), _c("button", {
+    staticClass: "btn-page",
     attrs: {
       disabled: _vm.pagination.current == _vm.pagination.last
     },
@@ -2245,7 +2249,9 @@ var render = function render() {
         return _vm.getApi(_vm.pagination.current + 1);
       }
     }
-  }, [_vm._v("\n        >>\n    ")])], 2);
+  }, [_c("i", {
+    staticClass: "fa-solid fa-circle-arrow-right"
+  })])], 2)]);
 };
 
 var staticRenderFns = [];
@@ -6845,7 +6851,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".animate__fadeIn[data-v-02893632] {\n  -webkit-animation-duration: 3s;\n          animation-duration: 3s;\n}", ""]);
+exports.push([module.i, ".animate__fadeIn[data-v-02893632] {\n  -webkit-animation-duration: 3s;\n          animation-duration: 3s;\n}\n.btn-page[data-v-02893632] {\n  border: none;\n  background-color: transparent;\n  font-size: 20px;\n}", ""]);
 
 // exports
 
