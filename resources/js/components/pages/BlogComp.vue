@@ -1,9 +1,12 @@
 <template>
-<div class="container animate__animated animate__fadeIn">
-    <div>
+<div class="container animate__animated ">
+
+    <LoaderComp v-if="!posts"/>
+    <div v-else>
+        <div>
         <PostItem v-for="post in posts" :key="post.id" :post="post"/>
-    </div>
-    <div class="p-3">
+        </div>
+        <div class="p-3">
         <button class="btn-page"
         @click="getApi(pagination.current -1)"
         :disabled="pagination.current == 1">
@@ -23,6 +26,9 @@
             <i class="fa-solid fa-circle-arrow-right"></i>
         </button>
     </div>
+    </div>
+
+
 
 </div>
 
@@ -30,11 +36,13 @@
 
 <script>
 import PostItem from '../partials/PostItem.vue';
+import LoaderComp from '../partials/LoaderComp.vue';
 
 export default {
     name: "BlogComp",
     components:{
         PostItem,
+        LoaderComp,
     },
 
 
@@ -50,6 +58,7 @@ export default {
     },
     methods: {
         getApi(page) {
+            this.post = null;
             axios.get(this.apiUrl + "?page=" + page)
                 .then(resp => {
                 this.posts = resp.data.data;
@@ -63,7 +72,7 @@ export default {
     mounted() {
         this.getApi(1);
     },
-    components: { PostItem }
+    components: { PostItem, LoaderComp }
 }
 </script>
 

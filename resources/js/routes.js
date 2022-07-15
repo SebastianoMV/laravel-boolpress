@@ -8,6 +8,7 @@ import HomeComp from './components/pages/HomeComp';
 import AboutComp from './components/pages/AboutComp';
 import ContactsComp from './components/pages/ContactsComp';
 import BlogComp from './components/pages/BlogComp';
+import ShowPost from './components/pages/ShowPost';
 
 const router = new VueRouter({
     mode: 'history',
@@ -32,6 +33,11 @@ const router = new VueRouter({
             path: '/blog',
             name: 'blog',
             component: BlogComp
+        },
+        {
+            path: '/show/:slug',
+            name: 'show',
+            component: ShowPost
         }
     ]
 });
