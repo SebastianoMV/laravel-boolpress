@@ -7,10 +7,14 @@ use Illuminate\Support\Str;
 
 class Post extends Model
 {
+    public function category(){
+        return $this->belongsTo('App\Category');
+    }
+
     public function tags(){
         return $this->belongsToMany('App\Tag');
     }
-    
+
     public static function newSlug($string){
         $slug = Str::slug($string, '-');
         $slug_copy = $slug;
@@ -19,7 +23,7 @@ class Post extends Model
         $c=1;
 
         while($flag){
-            $slug = $slug_copy . '-' .$c;       
+            $slug = $slug_copy . '-' .$c;
             $c++;
             $flag = Post::where('slug', $slug)->first();
         }
