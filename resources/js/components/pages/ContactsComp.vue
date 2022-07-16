@@ -1,22 +1,41 @@
 <template>
-<div class="container animate__animated animate__slideInLeft  my-3">
+<div class="container  my-3">
 
-    <div class="info-contacts position-relative">
-        <div class="info-box info-box-1 text-center position-absolute">
-            <h4>Indirizzo</h4>
-            <p>Via di qualcosa n13 Verona, VR 37131</p>
+    <div class="info-container">
+        <div class="info-contacts position-relative">
+        <div class="info-box info-box-1 animate__animated animate__slideInLeft text-center position-absolute">
+            <div class="content">
+                <i class="fa-solid fa-location-dot"></i>
+                <h4>Indirizzo</h4>
+                <p>Via di qualcosa n13 Verona, VR 37131</p>
+            </div>
+
         </div>
-        <div class="info-box info-box-2 text-center position-absolute">
-            <h4>Numero</h4>
+        <div class="info-box info-box-2 animate__animated animate__slideInDown text-center position-absolute">
+            <div class="content">
+                <i class="fa-solid fa-phone"></i>
+                <h4>Numero</h4>
+                <p>3333333333</p>
+            </div>
+
         </div>
-        <div class="info-box info-box-3 text-center position-absolute">
-            <h4>Email</h4>
+        <div class="info-box info-box-3 animate__animated animate__slideInUp animate__slideInRight text-center position-absolute">
+            <div class="content">
+                <i class="fa-solid fa-envelope"></i>
+                <h4>Email</h4>
+            </div>
         </div>
-        <div class="info-box info-box-4 text-center position-absolute">
-            <h4>Social</h4>
+        <div class="info-box info-box-4 animate__animated  animate__slideInRight text-center position-absolute">
+            <div class="content">
+                <i class="fa-solid fa-hashtag"></i>
+                <h4>Social</h4>
+            </div>
+
         </div>
+    </div>
 
     </div>
+
     <div class="form-contacts">
         <form>
             <div class="form-group">
@@ -74,26 +93,46 @@ export default {
     padding: 60px;
     border-radius: 10px;
     .form-control{
-        background-color: #151515;
+        background-color: #2e2e2e;
         border-color: #151515;
         color: white;
         &:focus{
-            border-color: #4b4b4b;
+            border-color: #2e2e2e;
             box-shadow: 0 0 0 0.2rem rgba(93, 93, 93, 0.25);
         }
     }
 }
-.info-contacts{
+
+.info-container{
     display: inline-block;
-    width: 37%;
-    height: 400px;
+    width: 38%;
+}
+.info-contacts{
+    display: block;
+    padding-bottom: 100%;
+
 
     .info-box{
         background-color: #4b4b4b;
-        width: 40%;
-        height: 100px;
+        width: 45%;
         border-radius: 10px;
         color: white;
+
+        &:after {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
+        }
+        .content{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+        }
+        .fa-solid{
+            font-size: 40px;
+            color: #0aa1f2;
+        }
     }
     .info-box-1{
         left: 10%;

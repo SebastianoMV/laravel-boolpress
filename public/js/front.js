@@ -2415,18 +2415,36 @@ var staticRenderFns = [function () {
       _c = _vm._self._c;
 
   return _c("div", {
-    staticClass: "container animate__animated animate__slideInLeft my-3"
+    staticClass: "container my-3"
+  }, [_c("div", {
+    staticClass: "info-container"
   }, [_c("div", {
     staticClass: "info-contacts position-relative"
   }, [_c("div", {
-    staticClass: "info-box info-box-1 text-center position-absolute"
-  }, [_c("h4", [_vm._v("Indirizzo")]), _vm._v(" "), _c("p", [_vm._v("Via di qualcosa n13 Verona, VR 37131")])]), _vm._v(" "), _c("div", {
-    staticClass: "info-box info-box-2 text-center position-absolute"
-  }, [_c("h4", [_vm._v("Numero")])]), _vm._v(" "), _c("div", {
-    staticClass: "info-box info-box-3 text-center position-absolute"
-  }, [_c("h4", [_vm._v("Email")])]), _vm._v(" "), _c("div", {
-    staticClass: "info-box info-box-4 text-center position-absolute"
-  }, [_c("h4", [_vm._v("Social")])])]), _vm._v(" "), _c("div", {
+    staticClass: "info-box info-box-1 animate__animated animate__slideInLeft text-center position-absolute"
+  }, [_c("div", {
+    staticClass: "content"
+  }, [_c("i", {
+    staticClass: "fa-solid fa-location-dot"
+  }), _vm._v(" "), _c("h4", [_vm._v("Indirizzo")]), _vm._v(" "), _c("p", [_vm._v("Via di qualcosa n13 Verona, VR 37131")])])]), _vm._v(" "), _c("div", {
+    staticClass: "info-box info-box-2 animate__animated animate__slideInDown text-center position-absolute"
+  }, [_c("div", {
+    staticClass: "content"
+  }, [_c("i", {
+    staticClass: "fa-solid fa-phone"
+  }), _vm._v(" "), _c("h4", [_vm._v("Numero")]), _vm._v(" "), _c("p", [_vm._v("3333333333")])])]), _vm._v(" "), _c("div", {
+    staticClass: "info-box info-box-3 animate__animated animate__slideInUp animate__slideInRight text-center position-absolute"
+  }, [_c("div", {
+    staticClass: "content"
+  }, [_c("i", {
+    staticClass: "fa-solid fa-envelope"
+  }), _vm._v(" "), _c("h4", [_vm._v("Email")])])]), _vm._v(" "), _c("div", {
+    staticClass: "info-box info-box-4 animate__animated animate__slideInRight text-center position-absolute"
+  }, [_c("div", {
+    staticClass: "content"
+  }, [_c("i", {
+    staticClass: "fa-solid fa-hashtag"
+  }), _vm._v(" "), _c("h4", [_vm._v("Social")])])])])]), _vm._v(" "), _c("div", {
     staticClass: "form-contacts"
   }, [_c("form", [_c("div", {
     staticClass: "form-group"
@@ -7121,7 +7139,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".form-contacts[data-v-3e2ea598] {\n  display: inline-block;\n  width: 60%;\n  background-color: #0aa1f2;\n  padding: 60px;\n  border-radius: 10px;\n}\n.form-contacts .form-control[data-v-3e2ea598] {\n  background-color: #151515;\n  border-color: #151515;\n  color: white;\n}\n.form-contacts .form-control[data-v-3e2ea598]:focus {\n  border-color: #4b4b4b;\n  box-shadow: 0 0 0 0.2rem rgba(93, 93, 93, 0.25);\n}\n.info-contacts[data-v-3e2ea598] {\n  display: inline-block;\n  width: 37%;\n  height: 400px;\n}\n.info-contacts .info-box[data-v-3e2ea598] {\n  background-color: #4b4b4b;\n  width: 40%;\n  height: 100px;\n  border-radius: 10px;\n  color: white;\n}\n.info-contacts .info-box-1[data-v-3e2ea598] {\n  left: 10%;\n}\n.info-contacts .info-box-2[data-v-3e2ea598] {\n  right: -10%;\n}\n.info-contacts .info-box-3[data-v-3e2ea598] {\n  left: 10%;\n  bottom: 0;\n}\n.info-contacts .info-box-4[data-v-3e2ea598] {\n  right: -10%;\n  bottom: 0;\n}", ""]);
+exports.push([module.i, ".form-contacts[data-v-3e2ea598] {\n  display: inline-block;\n  width: 60%;\n  background-color: #0aa1f2;\n  padding: 60px;\n  border-radius: 10px;\n}\n.form-contacts .form-control[data-v-3e2ea598] {\n  background-color: #2e2e2e;\n  border-color: #151515;\n  color: white;\n}\n.form-contacts .form-control[data-v-3e2ea598]:focus {\n  border-color: #2e2e2e;\n  box-shadow: 0 0 0 0.2rem rgba(93, 93, 93, 0.25);\n}\n.info-container[data-v-3e2ea598] {\n  display: inline-block;\n  width: 38%;\n}\n.info-contacts[data-v-3e2ea598] {\n  display: block;\n  padding-bottom: 100%;\n}\n.info-contacts .info-box[data-v-3e2ea598] {\n  background-color: #4b4b4b;\n  width: 45%;\n  border-radius: 10px;\n  color: white;\n}\n.info-contacts .info-box[data-v-3e2ea598]:after {\n  content: \"\";\n  display: block;\n  padding-bottom: 100%;\n}\n.info-contacts .info-box .content[data-v-3e2ea598] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  padding: 10px;\n}\n.info-contacts .info-box .fa-solid[data-v-3e2ea598] {\n  font-size: 40px;\n  color: #0aa1f2;\n}\n.info-contacts .info-box-1[data-v-3e2ea598] {\n  left: 10%;\n}\n.info-contacts .info-box-2[data-v-3e2ea598] {\n  right: -10%;\n}\n.info-contacts .info-box-3[data-v-3e2ea598] {\n  left: 10%;\n  bottom: 0;\n}\n.info-contacts .info-box-4[data-v-3e2ea598] {\n  right: -10%;\n  bottom: 0;\n}", ""]);
 
 // exports
 
