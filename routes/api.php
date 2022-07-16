@@ -22,5 +22,5 @@ Route::namespace('Api')
         ->group(function(){
             Route::get('/', 'PageController@index');
             Route::get('/{slug}', 'PageController@show');
-
+            Route::get('/post-category/{slug}', 'PageController@postsByCat');
         });

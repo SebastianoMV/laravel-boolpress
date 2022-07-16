@@ -6,6 +6,8 @@
         </h3>
         <p>{{shortCont}}</p>
         <p>{{formatDate}}</p>
+
+
         <ul>
             <li v-for="(tag) in post.tags" :key="tag.id" :class="tag.slug">
                 {{tag.name}}

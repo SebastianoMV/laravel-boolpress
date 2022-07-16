@@ -2006,21 +2006,36 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         current: null,
         last: null
       },
-      apiUrl: "/api/posts"
+      apiUrl: "/api/posts",
+      categories: null,
+      showpage: true
     };
   },
   methods: {
     getApi: function getApi(page) {
       var _this = this;
 
-      this.post = null;
+      this.posts = null;
+      this.showpage = true;
       axios.get(this.apiUrl + "?page=" + page).then(function (resp) {
-        _this.posts = resp.data.data;
+        _this.posts = resp.data.posts.data;
         _this.pagination = {
-          current: resp.data.current_page,
-          last: resp.data.last_page
+          current: resp.data.posts.current_page,
+          last: resp.data.posts.last_page
         };
-        console.log(_this.pagination);
+        console.log(_this.posts);
+        _this.categories = resp.data.categories;
+        console.log(_this.categories);
+      });
+    },
+    postsByCategory: function postsByCategory(slug) {
+      var _this2 = this;
+
+      this.posts = null;
+      this.showpage = false;
+      axios.get(this.apiUrl + '/post-category/' + slug).then(function (res) {
+        _this2.posts = res.data.posts;
+        console.log(_this2.posts);
       });
     }
   },
@@ -2282,6 +2297,8 @@ var render = function render() {
       }
     });
   }), 1), _vm._v(" "), _c("div", {
+    staticClass: "d-flex justify-content-between"
+  }, [_vm.showpage ? _c("div", {
     staticClass: "p-3"
   }, [_c("button", {
     staticClass: "btn-page",
@@ -2307,7 +2324,7 @@ var render = function render() {
           return _vm.getApi(n);
         }
       }
-    }, [_vm._v("\n            " + _vm._s(n) + "\n        ")]);
+    }, [_vm._v("\n                    " + _vm._s(n) + "\n                ")]);
   }), _vm._v(" "), _c("button", {
     staticClass: "btn-page",
     attrs: {
@@ -2320,7 +2337,49 @@ var render = function render() {
     }
   }, [_c("i", {
     staticClass: "fa-solid fa-circle-arrow-right"
-  })])], 2)])], 1);
+  })])], 2) : _c("div", {
+    staticClass: "p-3"
+  }, [_c("button", {
+    staticClass: "btn-page",
+    on: {
+      click: function click($event) {
+        return _vm.getApi(1);
+      }
+    }
+  }, [_c("i", {
+    staticClass: "fa-solid fa-circle-arrow-left"
+  }), _vm._v(" Tutte le categorie\n                ")])]), _vm._v(" "), _c("div", {
+    staticClass: "p-3"
+  }, [_c("div", {
+    staticClass: "dropdown"
+  }, [_c("button", {
+    staticClass: "btn btn-secondary dropdown-toggle",
+    attrs: {
+      type: "button",
+      id: "dropdownMenuButton",
+      "data-toggle": "dropdown",
+      "aria-haspopup": "true",
+      "aria-expanded": "false"
+    }
+  }, [_vm._v("\n                    Scegli una categoria\n                    ")]), _vm._v(" "), _c("div", {
+    staticClass: "dropdown-menu",
+    attrs: {
+      "aria-labelledby": "dropdownMenuButton"
+    }
+  }, _vm._l(_vm.categories, function (category) {
+    return _c("li", {
+      key: category.id,
+      staticClass: "dropdown-item",
+      attrs: {
+        href: ""
+      },
+      on: {
+        click: function click($event) {
+          return _vm.postsByCategory(category.slug);
+        }
+      }
+    }, [_vm._v("\n                            " + _vm._s(category.name) + "\n                        ")]);
+  }), 0)])])])])], 1);
 };
 
 var staticRenderFns = [];
