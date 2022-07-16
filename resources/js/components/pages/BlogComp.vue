@@ -4,7 +4,7 @@
     <LoaderComp v-if="!posts"/>
     <div v-else>
         <div>
-        <PostItem v-for="post in posts" :key="post.id" :post="post" />
+        <PostItem v-for="post in posts" :key="post.id" :post="post" :category="category" :showpage="showpage"/>
         </div>
         <div class="d-flex justify-content-between">
             <div v-if="showpage" class="p-3">
@@ -78,7 +78,7 @@ export default {
                 last: null,
             },
             apiUrl: "/api/posts",
-            categories: null,
+            category: null,
             showpage: true,
         };
     },
@@ -102,7 +102,7 @@ export default {
             this.showpage = false;
             axios.get(this.apiUrl + '/post-category/' + slug)
             .then(res => {
-                this.posts = res.data.posts;
+                this.posts = res.data;
                 console.log(this.posts);
             })
         }

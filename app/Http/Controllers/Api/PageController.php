@@ -25,7 +25,10 @@ class PageController extends Controller
     }
 
     public function postsByCat($slug){
+
         $category = Category::where('slug', $slug)->with('posts')->first();
-        return response()->json($category);
+        $posts = Post::with(['category','tags'])->where('category_id', $category->id )->get();
+
+        return response()->json($posts);
     }
 }

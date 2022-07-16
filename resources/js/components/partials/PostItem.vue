@@ -7,9 +7,8 @@
         <p>{{shortCont}}</p>
         <p>{{formatDate}}</p>
 
-
         <ul>
-            <li v-for="(tag) in post.tags" :key="tag.id" :class="tag.slug">
+            <li v-for="tag in post.tags" :key="tag.id" :class="tag.slug">
                 {{tag.name}}
             </li>
         </ul>
@@ -23,6 +22,8 @@ export default {
     name: 'PosItem',
     props: {
         post: Object,
+        category: Object,
+        showpage: Boolean,
     },
     computed:{
         shortCont(){
