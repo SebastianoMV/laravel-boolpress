@@ -5,7 +5,7 @@
         <div class="info-contacts position-relative">
         <div class="info-box info-box-1 animate__animated animate__slideInLeft text-center position-absolute">
             <div class="content">
-                <i class="fa-solid fa-location-dot"></i>
+                <i class="fa-solid fa-location-dot  my-1"></i>
                 <h4>Indirizzo</h4>
                 <p>Via di qualcosa n13 Verona, VR 37131</p>
             </div>
@@ -13,7 +13,7 @@
         </div>
         <div class="info-box info-box-2 animate__animated animate__slideInDown text-center position-absolute">
             <div class="content">
-                <i class="fa-solid fa-phone"></i>
+                <i class="fa-solid fa-phone  my-1"></i>
                 <h4>Numero</h4>
                 <p>3333333333</p>
             </div>
@@ -21,13 +21,13 @@
         </div>
         <div class="info-box info-box-3 animate__animated animate__slideInUp animate__slideInRight text-center position-absolute">
             <div class="content">
-                <i class="fa-solid fa-envelope"></i>
+                <i class="fa-solid fa-envelope my-1"></i>
                 <h4>Email</h4>
             </div>
         </div>
         <div class="info-box info-box-4 animate__animated  animate__slideInRight text-center position-absolute">
             <div class="content">
-                <i class="fa-solid fa-hashtag"></i>
+                <i class="fa-solid fa-hashtag  my-1"></i>
                 <h4>Social</h4>
             </div>
 
@@ -98,7 +98,7 @@ export default {
         color: white;
         &:focus{
             border-color: #2e2e2e;
-            box-shadow: 0 0 0 0.2rem rgba(93, 93, 93, 0.25);
+            box-shadow: 0 0 0 0.2rem rgba(93, 93, 93, 0.72);
         }
     }
 }
