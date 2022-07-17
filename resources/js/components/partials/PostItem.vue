@@ -1,8 +1,8 @@
 <template>
-    <div class="card m-3 p-3" >
+    <div class="card m-3 p-3"  :class="index%2 ? 'dark-color' : 'light-color'">
 
         <h3>
-            <router-link :to="{ name: 'show', params: { slug: post.slug }}">{{post.title}}</router-link>
+            <router-link :class="index%2 ? 'light-title' : 'dark-title'" :to="{ name: 'show', params: { slug: post.slug }}">{{post.title}}</router-link>
         </h3>
         <p>{{shortCont}}</p>
         <p>{{formatDate}}</p>
@@ -24,6 +24,7 @@ export default {
         post: Object,
         category: Object,
         showpage: Boolean,
+        index: Number,
     },
     computed:{
         shortCont(){
@@ -39,14 +40,23 @@ export default {
 
             return `${day}/${mnt}/${year}`;
         }
-    }
+    },
+
 
 }
 </script>
 
 <style lang="scss" scoped>
 .card{
+    h3{
+        .dark-title{
+            color: #2e2e2e;
+        }
+        .light-title{
+            color: #0aa1f2;
+        }
 
+    }
     ul{
         padding: 0;
         list-style: none;
@@ -69,8 +79,14 @@ export default {
             color: blue;
         }
     }
-    background-color: rgb(232, 229, 229);
+}
 
+.light-color{
+    background-color: lighten($color: #0aa1f2, $amount: 20%);
+}
+.dark-color{
+    background-color: #2e2e2e;
+    color: white;
 }
 
 </style>

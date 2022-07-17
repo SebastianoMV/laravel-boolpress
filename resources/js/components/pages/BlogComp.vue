@@ -4,7 +4,7 @@
     <LoaderComp v-if="!posts"/>
     <div v-else>
         <div>
-        <PostItem v-for="post in posts" :key="post.id" :post="post" :category="category" :showpage="showpage"/>
+        <PostItem v-for="(post, index) in posts" :key="post.id" :post="post" :category="category" :showpage="showpage" :index="index"/>
         </div>
         <div class="d-flex justify-content-between">
             <div v-if="showpage" class="p-3">

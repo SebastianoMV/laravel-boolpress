@@ -1,12 +1,12 @@
 <template>
-<div class="container animate__animated animate__slideInLeft d-flex">
+<div class="container animate__animated animate__fadeIn d-flex">
     <div class="text">
         <h2>Un forum di gamers per gamers</h2>
         <h4 class="animate__animated animate__slideInLeft">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, ea.</h4>
         <p class="animate__animated animate__slideInRight">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur facilis voluptas consectetur at minima voluptatum omnis cum consequatur modi asperiores?</p>
     </div>
     <div class="image">
-        <img src="../../../../public/images/The-Legend-Of-Zelda-Breath-Of-The-Wild-Free-PNG.png" alt="TLOZ">
+        <img src="../../../../public/image/The-Legend-Of-Zelda-Breath-Of-The-Wild-Free-PNG.png" alt="TLOZ">
     </div>
 </div>
 
@@ -51,12 +51,12 @@ export default {
             background-color: black;
             color: #0aa1f2;
             padding: 20px;
-            animation-duration: 5s;
+            animation-duration: 3s;
             margin-left: 20px;
         }
         p{
             width: 95%;
-            animation-duration: 6s;
+            animation-duration: 3s;
         }
 
     }

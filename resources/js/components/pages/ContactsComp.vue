@@ -23,6 +23,7 @@
             <div class="content">
                 <i class="fa-solid fa-envelope my-1"></i>
                 <h4>Email</h4>
+                <p>SebastianoMV</p>
             </div>
         </div>
         <div class="info-box info-box-4 animate__animated  animate__slideInRight text-center position-absolute">

@@ -2,6 +2,7 @@
 <div class="container my-3">
     <h3>{{post.title}}</h3>
     <p>{{post.content}}</p>
+    <button> Torna indietro </button>
 
 </div>
 
@@ -29,7 +30,7 @@ export default {
                 this.post = resp.data;
                 console.log(this.post);
             });
-            // axios.get(this.apiUrl +)
+
         }
 
     },
