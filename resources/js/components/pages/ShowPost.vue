@@ -2,7 +2,7 @@
 <div class="container my-3">
     <h3>{{post.title}}</h3>
     <p>{{post.content}}</p>
-    <button> Torna indietro </button>
+    <router-link class="nav-link" :to="{name: 'blog'}"><i class="fa-solid fa-circle-arrow-left"></i> Back</router-link>
 
 </div>
 
@@ -43,5 +43,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+a{
+    cursor: pointer;
+}
 
 </style>
